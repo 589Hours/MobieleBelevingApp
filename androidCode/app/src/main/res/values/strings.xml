@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobieleBeleving</string>
+    <string name="toast">Deze code bestaat niet</string>
 </resources>
