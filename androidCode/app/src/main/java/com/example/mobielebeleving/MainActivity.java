@@ -1,9 +1,14 @@
 package com.example.mobielebeleving;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +27,22 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button dutch = findViewById(R.id.dutchTranslation);
+        ImageButton info = findViewById(R.id.helpButton);
+        TextView textView = findViewById(R.id.informationDisplay);
+        info.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                textView.setText(R.string.helpInformation);
+            }
+        });
+        dutch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText("");
+            }
         });
 
 
