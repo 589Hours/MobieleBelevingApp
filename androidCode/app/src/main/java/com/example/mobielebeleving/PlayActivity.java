@@ -30,7 +30,7 @@ public class PlayActivity extends AppCompatActivity {
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                flashLightController.flash();
+                new Thread(flashLightController).start();
             }
         });
     }

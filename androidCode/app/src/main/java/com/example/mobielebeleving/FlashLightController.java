@@ -6,7 +6,7 @@ import android.hardware.camera2.CameraManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FlashLightController {
+public class FlashLightController implements Runnable{
     private CameraManager cameraManager;
     private String cameraID;
     public FlashLightController(CameraManager cameraManager){
@@ -25,5 +25,10 @@ public class FlashLightController {
         } catch (CameraAccessException | InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void run() {
+        flash();
     }
 }
