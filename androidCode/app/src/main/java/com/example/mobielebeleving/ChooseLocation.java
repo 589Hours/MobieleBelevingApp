@@ -40,8 +40,7 @@ public class ChooseLocation extends AppCompatActivity
 
     private void navigateToDetailActivity(int position, int imageResourceId) {
         Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra(MainActivity.EXTRA_INFO_ID, position);
-//        intent.putExtra(MainActivity.EXTRA_IMAGE_ID, imageResourceId);
+        intent.putExtra(MainActivity.EXTRA_INFO_ID, position);
         startActivity(intent);
     }
 }

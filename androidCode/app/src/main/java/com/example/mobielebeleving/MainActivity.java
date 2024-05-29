@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_INFO_ID = "infoId";
     private final static String tag = MainActivity.class.getSimpleName();
 
     @Override
@@ -25,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
         EditText codeInput = findViewById(R.id.codeInput);
         Button submitButton = findViewById(R.id.submitButton);
         CodeChecker codeChecker = new CodeChecker();
+
+        int id = getIntent().getExtras().getInt(EXTRA_INFO_ID);
+        Location location = LocationManager.getLocations(id);
+
+        TextView projectInfo = findViewById(R.id.projectTitel);
+        projectInfo.setText(location.getLocation());
+
+        ImageView projectImage = findViewById(R.id.infoDetailImageView);
+        projectImage.setImageResource(location.getImageResourceId());
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

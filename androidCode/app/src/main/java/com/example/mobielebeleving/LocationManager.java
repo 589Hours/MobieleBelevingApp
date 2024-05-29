@@ -17,6 +17,8 @@ public class LocationManager {
 
     private static void createProject() {
         locations.add(new Location(appContext.getString(R.string.uilenRots), R.drawable.uilenrots));
+        locations.add(new Location(appContext.getString(R.string.droomReis), R.drawable.droomreis));
+        locations.add(new Location(appContext.getString(R.string.deZwevendeBelg), R.drawable.de_zwevende_belg));
     }
 
     public static ArrayList<Location> getLocations() {

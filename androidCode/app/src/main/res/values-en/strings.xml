@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast">This code doesn\'t exist</string>
+    <string name="locaties">Locations</string>
+    <string name="voer_code_in">Enter code</string>
+</resources>
