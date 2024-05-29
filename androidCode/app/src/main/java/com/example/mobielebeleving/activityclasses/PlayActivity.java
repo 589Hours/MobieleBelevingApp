@@ -1,4 +1,4 @@
-package com.example.mobielebeleving;
+package com.example.mobielebeleving.activityclasses;
 
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mobielebeleving.FlashLightController;
+import com.example.mobielebeleving.R;
+import com.example.mobielebeleving.Timer;
 
 public class PlayActivity extends AppCompatActivity {
     private FlashLightController flashLightController;

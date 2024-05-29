@@ -1,4 +1,4 @@
-package com.example.mobielebeleving;
+package com.example.mobielebeleving.activityclasses;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +15,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class EnterCode extends AppCompatActivity {
+import com.example.mobielebeleving.CodeChecker;
+import com.example.mobielebeleving.Location;
+import com.example.mobielebeleving.LocationManager;
+import com.example.mobielebeleving.R;
+import com.example.mobielebeleving.Tijdelijke_Layout;
+
+public class EnterCodeActivity extends AppCompatActivity {
     public static final String EXTRA_INFO_ID = "infoId";
-    private final static String tag = EnterCode.class.getSimpleName();
+    private final static String tag = EnterCodeActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

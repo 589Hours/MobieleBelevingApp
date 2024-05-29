@@ -1,5 +1,7 @@
 package com.example.mobielebeleving;
 
+import com.example.mobielebeleving.activityclasses.PlayActivity;
+
 public class Timer implements Runnable{
     private int length;
     public Timer(int length){

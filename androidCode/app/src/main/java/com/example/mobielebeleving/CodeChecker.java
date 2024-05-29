@@ -6,8 +6,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobielebeleving.activityclasses.EnterCodeActivity;
+
 public class CodeChecker extends AppCompatActivity {
-    private final static String tag = EnterCode.class.getSimpleName();
+    private final static String tag = EnterCodeActivity.class.getSimpleName();
     private String code;
 
     public CodeChecker () {

@@ -1,4 +1,4 @@
-package com.example.mobielebeleving;
+package com.example.mobielebeleving.activityclasses;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-public class ChooseLocation extends AppCompatActivity
-        implements AdapterView.OnItemClickListener, LocationAdapter.OnItemClickListener{
+import com.example.mobielebeleving.LocationAdapter;
+import com.example.mobielebeleving.LocationManager;
+import com.example.mobielebeleving.R;
+
+public class ChooseLocationActivity extends AppCompatActivity
+        implements AdapterView.OnItemClickListener, LocationAdapter.OnItemClickListener {
     private RecyclerView locationRecyclerView;
     private LocationAdapter locationRecyclerViewAdapter;
     @Override
@@ -39,8 +43,8 @@ public class ChooseLocation extends AppCompatActivity
     }
 
     private void navigateToDetailActivity(int position, int imageResourceId) {
-        Intent intent = new Intent(this, EnterCode.class);
-        intent.putExtra(EnterCode.EXTRA_INFO_ID, position);
+        Intent intent = new Intent(this, EnterCodeActivity.class);
+        intent.putExtra(EnterCodeActivity.EXTRA_INFO_ID, position);
         startActivity(intent);
     }
 }
