@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    AlertDialog createDialog(){
+    AlertDialog createDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Uitleg");
         builder.setMessage(R.string.helpDialog);
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         return builder.create();
+    }
     public void navigateChooseLocationActivity() {
         Intent intent = new Intent(this, ChooseLocationActivity.class);
         startActivity(intent);

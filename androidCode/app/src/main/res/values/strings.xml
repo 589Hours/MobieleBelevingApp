@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MobieleBeleving</string>
+    <string name="app_name" translatable="false">MobieleBeleving</string>
     <string name="openingText">
         Welkom! \n\n\n
 
@@ -27,7 +27,6 @@
         - Als het lampje uit gaat speel jij een nieuw deel van het verhaal vrij \n
         - Verzamel ze allemaal en beleef het verhaal achter de attractie \n\n\n
     </string>
-    <string name="app_name" translatable="false">MobieleBeleving</string>
     <string name="toast">Deze code bestaat niet</string>
     <string name="uilenRots" translatable="false">Uilenrots\n</string>
     <string name="droomReis" translatable="false">Droomreis</string>
