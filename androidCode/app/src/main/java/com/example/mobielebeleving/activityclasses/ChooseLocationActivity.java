@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.mobielebeleving.LocationAdapter;
-import com.example.mobielebeleving.LocationManager;
+import com.example.mobielebeleving.RecyclerView.LocationAdapter;
+import com.example.mobielebeleving.RecyclerView.LocationManager;
 import com.example.mobielebeleving.R;
 
 public class ChooseLocationActivity extends AppCompatActivity
@@ -34,15 +34,15 @@ public class ChooseLocationActivity extends AppCompatActivity
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        navigateToDetailActivity(position, LocationManager.getLocations().get(position).getImageResourceId());
+        navigateToEnterCodeActivity(position, LocationManager.getLocations().get(position).getImageResourceId());
     }
 
     @Override
     public void onItemClick(int clickedPosition, int imageResourceId) {
-        navigateToDetailActivity(clickedPosition, imageResourceId);
+        navigateToEnterCodeActivity(clickedPosition, imageResourceId);
     }
 
-    private void navigateToDetailActivity(int position, int imageResourceId) {
+    private void navigateToEnterCodeActivity(int position, int imageResourceId) {
         Intent intent = new Intent(this, EnterCodeActivity.class);
         intent.putExtra(EnterCodeActivity.EXTRA_INFO_ID, position);
         startActivity(intent);

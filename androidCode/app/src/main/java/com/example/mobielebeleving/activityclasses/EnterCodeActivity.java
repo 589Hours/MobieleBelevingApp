@@ -2,7 +2,6 @@ package com.example.mobielebeleving.activityclasses;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,10 +15,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobielebeleving.CodeChecker;
-import com.example.mobielebeleving.Location;
-import com.example.mobielebeleving.LocationManager;
+import com.example.mobielebeleving.RecyclerView.Location;
+import com.example.mobielebeleving.RecyclerView.LocationManager;
 import com.example.mobielebeleving.R;
-import com.example.mobielebeleving.Tijdelijke_Layout;
 
 public class EnterCodeActivity extends AppCompatActivity {
     public static final String EXTRA_INFO_ID = "infoId";
@@ -47,12 +45,10 @@ public class EnterCodeActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(tag, codeInput.getText().toString());
-                Log.d(tag, "User clicked the button");
                 String code = codeInput.getText().toString();
                 codeChecker.setCode(code);
                 if(codeChecker.checkCode(v.getContext())) {
-                    navigateToProjectActivity();
+                    navigateToPlayActivity();
                 }
             }
         });
@@ -64,8 +60,8 @@ public class EnterCodeActivity extends AppCompatActivity {
         });
     }
 
-    public void navigateToProjectActivity() {
-        Intent intent = new Intent(this, Tijdelijke_Layout.class);
+    public void navigateToPlayActivity() {
+        Intent intent = new Intent(this, PlayActivity.class);
         startActivity(intent);
     }
 }

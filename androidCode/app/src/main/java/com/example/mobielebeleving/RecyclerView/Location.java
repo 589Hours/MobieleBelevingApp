@@ -1,4 +1,4 @@
-package com.example.mobielebeleving;
+package com.example.mobielebeleving.RecyclerView;
 
 public class Location {
     private String location;

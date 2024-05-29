@@ -32,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PlayActivity.class);
-                startActivity(intent);
+              navigateChooseLocationActivity();
             }
         });
+    }
+
+    public void navigateChooseLocationActivity() {
+        Intent intent = new Intent(this, ChooseLocationActivity.class);
+        startActivity(intent);
     }
 }

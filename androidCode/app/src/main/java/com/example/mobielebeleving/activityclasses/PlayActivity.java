@@ -1,5 +1,6 @@
 package com.example.mobielebeleving.activityclasses;
 
+import android.content.Intent;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.View;

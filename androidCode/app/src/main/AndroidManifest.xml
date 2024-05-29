@@ -10,9 +10,6 @@
         android:theme="@style/Theme.MobieleBeleving">
 
         <activity
-            android:name=".activityclasses.PlayActivity"
-            android:exported="false" />
-        <activity
             android:name=".activityclasses.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -24,8 +21,11 @@
 
         <activity
             android:name=".activityclasses.ChooseLocationActivity"
-            android:exported="false"
-            />
+            android:parentActivityName=".activityclasses.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+        </activity>
 
         <activity
             android:name=".activityclasses.EnterCodeActivity"
@@ -36,7 +36,7 @@
         </activity>
 
         <activity
-            android:name=".Tijdelijke_Layout"
+            android:name=".activityclasses.PlayActivity"
             android:parentActivityName=".activityclasses.EnterCodeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
