@@ -1,7 +1,9 @@
 package com.example.mobielebeleving;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
@@ -31,20 +33,24 @@ public class MainActivity extends AppCompatActivity {
 
         Button dutch = findViewById(R.id.dutchTranslation);
         ImageButton info = findViewById(R.id.helpButton);
-        TextView textView = findViewById(R.id.informationDisplay);
         info.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                textView.setText(R.string.helpInformation);
+                AlertDialog dialog = createDialog();
+                dialog.show();
             }
         });
-        dutch.setOnClickListener(new View.OnClickListener() {
+    }
+    AlertDialog createDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Uitleg");
+        builder.setMessage(R.string.helpDialog);
+        builder.setPositiveButton("BEGREPEN", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                textView.setText("");
+            public void onClick(DialogInterface dialog, int which) {
+
             }
         });
-
-
+        return builder.create();
     }
 }
