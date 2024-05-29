@@ -1,18 +1,13 @@
 package com.example.mobielebeleving;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class CodeChecker extends AppCompatActivity {
-    private final static String tag = MainActivity.class.getSimpleName();
+    private final static String tag = EnterCode.class.getSimpleName();
     private String code;
 
     public CodeChecker () {

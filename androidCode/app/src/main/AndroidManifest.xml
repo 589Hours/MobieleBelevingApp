@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".EnterCode"
             android:parentActivityName=".ChooseLocation">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -30,10 +30,10 @@
 
         <activity
             android:name=".Tijdelijke_Layout"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".EnterCode">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mobielebeleving.MainActivity" />
+                android:value="com.example.mobielebeleving.EnterCode" />
                    </activity>
 
     </application>

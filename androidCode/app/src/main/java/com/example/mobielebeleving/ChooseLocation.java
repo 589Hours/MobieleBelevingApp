@@ -16,7 +16,7 @@ public class ChooseLocation extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.start_screen);
+    setContentView(R.layout.choose_location);
 
         LocationManager.setApplicationContext(getApplicationContext());
 
@@ -39,8 +39,8 @@ public class ChooseLocation extends AppCompatActivity
     }
 
     private void navigateToDetailActivity(int position, int imageResourceId) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(MainActivity.EXTRA_INFO_ID, position);
+        Intent intent = new Intent(this, EnterCode.class);
+        intent.putExtra(EnterCode.EXTRA_INFO_ID, position);
         startActivity(intent);
     }
 }

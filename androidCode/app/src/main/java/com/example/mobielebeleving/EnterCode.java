@@ -15,15 +15,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class EnterCode extends AppCompatActivity {
     public static final String EXTRA_INFO_ID = "infoId";
-    private final static String tag = MainActivity.class.getSimpleName();
+    private final static String tag = EnterCode.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.enter_code);
 
         EditText codeInput = findViewById(R.id.codeInput);
         Button submitButton = findViewById(R.id.submitButton);
