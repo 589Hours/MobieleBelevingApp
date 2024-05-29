@@ -6,22 +6,29 @@ import android.hardware.camera2.CameraManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FlashLightController {
+public class FlashLightController implements Runnable{
     private CameraManager cameraManager;
     private String cameraID;
-    public FlashLightController(AppCompatActivity appCompatActivity){
-        //TODO order the code, its now just experimenting results
-        cameraManager = (CameraManager) appCompatActivity.getSystemService(Context.CAMERA_SERVICE);
-
-        try{
+    public FlashLightController(CameraManager cameraManager){
+        try {
+            this.cameraManager = cameraManager;
             cameraID = cameraManager.getCameraIdList()[0];
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+    public void flash(){
+        try{
             cameraManager.setTorchMode(cameraID,true);
             Thread.sleep(1000);
             cameraManager.setTorchMode(cameraID, false);
-        } catch (CameraAccessException e) {
+        } catch (CameraAccessException | InterruptedException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void run() {
+        flash();
     }
 }
