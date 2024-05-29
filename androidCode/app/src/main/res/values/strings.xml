@@ -1,4 +1,32 @@
 <resources>
+    <string name="app_name">MobieleBeleving</string>
+    <string name="openingText">
+        Welkom! \n\n\n
+
+        Voordat we kunnen gaan beginnen met het maken van onze expeditie is het handig om te weten wat er gedurende uw bezoek mogelijk is in de Esteling!
+        Zoals allicht bekend is heeft de Esteling een nieuwe manier van beleven uitgevonden. Om deze beleving compleet te maken hebben wij jou nodig! Jij kan op ontdekkingsreis gaan
+        bij iedere attractie die de Esteling tot zijn beschikking heeft. Iedere attractie heeft een eigen verhaallijn. Deze is echter nog niet ontdekt, hier ben jij aan de beurt.
+        gaat het je lukken om alle verhalen te verzamelen? Hieronder wordt beschreven hoe. \n\n\n
+
+        - Kies de attractie waar je in wilt \n
+        - Voer de code in op je telefoon als je de rij in gaat \n
+        - Zoek voor de lichtgevende lampjes aan de binnenkant van de kamer \n
+        - Richt je zaklamp van je telefoon op de constructie onder de lamp \n
+        - Druk op de zaklamp knop om een code te activeren \n
+        - Als het lampje uit gaat speel jij een nieuw deel van het verhaal vrij \n
+        - Verzamel ze allemaal en beleef het verhaal achter de attractie \n\n\n
+
+        Veel plezier!!
+    </string>
+    <string name="helpDialog">
+        - Kies de attractie waar je in wilt \n
+        - Voer de code in op je telefoon als je de rij in gaat \n
+        - Zoek voor de lichtgevende lampjes aan de binnenkant van de kamer \n
+        - Richt je zaklamp van je telefoon op de constructie onder de lamp \n
+        - Druk op de zaklamp knop om een code te activeren \n
+        - Als het lampje uit gaat speel jij een nieuw deel van het verhaal vrij \n
+        - Verzamel ze allemaal en beleef het verhaal achter de attractie \n\n\n
+    </string>
     <string name="app_name" translatable="false">MobieleBeleving</string>
     <string name="toast">Deze code bestaat niet</string>
     <string name="uilenRots" translatable="false">Uilenrots\n</string>
