@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">MobieleBeleving</string>
+    <string name="app_name" translatable="false">MobieleBeleving</string>
     <string name="toast">Deze code bestaat niet</string>
+    <string name="uilenRots" translatable="false">Uilenrots\n</string>
+    <string name="droomReis" translatable="false">Droomreis</string>
+    <string name="deZwevendeBelg" translatable="false">De zwevende Belg</string>
+    <string name="locaties">Locaties</string>
+    <string name="voer_code_in">Voer code in</string>
 </resources>
