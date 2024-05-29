@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class PlayActivity extends AppCompatActivity {
     private FlashLightController flashLightController;
     private ImageButton flashButton;
+    private static boolean buttonIsReady = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +27,35 @@ public class PlayActivity extends AppCompatActivity {
         });
 
         flashLightController = new FlashLightController((CameraManager) getSystemService(CAMERA_SERVICE));
+
+
         flashButton = findViewById(R.id.flashButton);
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(flashLightController).start();
+                if (buttonIsReady){
+                    Thread flashThread = new Thread(flashLightController);
+                    flashThread.start();
+                    buttonIsReady = false;
+                    try {
+                        flashThread.join();
+
+                        /*
+                        time length is optional, but keep it above 0
+                        preferably above two.
+                        */
+                        
+                        Thread countThread = new Thread(new Timer(3));
+                        countThread.start();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         });
+    }
+
+    public static void setReady(){
+        buttonIsReady = true;
     }
 }
