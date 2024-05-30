@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.mobielebeleving.RecyclerView.LocationAdapter;
-import com.example.mobielebeleving.RecyclerView.LocationManager;
+import com.example.mobielebeleving.RecyclerView.Location.LocationAdapter;
+import com.example.mobielebeleving.RecyclerView.Location.LocationManager;
 import com.example.mobielebeleving.R;
 
 public class ChooseLocationActivity extends AppCompatActivity

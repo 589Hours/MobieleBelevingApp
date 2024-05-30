@@ -24,6 +24,7 @@ import com.example.mobielebeleving.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button playButton;
+    private Button storyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +41,18 @@ public class MainActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              navigateChooseLocationActivity();
+              navigateToChooseLocationActivity();
             }
         });
+
+        storyButton = findViewById(R.id.storyButton);
+        storyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToChooseStoryActivity();
+            }
+        });
+
         Button dutch = findViewById(R.id.dutchTranslation);
         ImageButton info = findViewById(R.id.helpButton);
         info.setOnClickListener(new View.OnClickListener(){
@@ -65,8 +75,13 @@ public class MainActivity extends AppCompatActivity {
         });
         return builder.create();
     }
-    public void navigateChooseLocationActivity() {
+    public void navigateToChooseLocationActivity() {
         Intent intent = new Intent(this, ChooseLocationActivity.class);
+        startActivity(intent);
+    }
+
+    public void navigateToChooseStoryActivity() {
+        Intent intent = new Intent(this, ChooseStoryActivity.class);
         startActivity(intent);
     }
 }

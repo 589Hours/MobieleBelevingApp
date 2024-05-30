@@ -15,8 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobielebeleving.CodeChecker;
-import com.example.mobielebeleving.RecyclerView.Location;
-import com.example.mobielebeleving.RecyclerView.LocationManager;
+import com.example.mobielebeleving.RecyclerView.Location.Location;
+import com.example.mobielebeleving.RecyclerView.Location.LocationManager;
 import com.example.mobielebeleving.R;
 
 public class EnterCodeActivity extends AppCompatActivity {

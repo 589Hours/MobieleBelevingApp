@@ -66,7 +66,17 @@
         app:layout_constraintEnd_toStartOf="@+id/dutchTranslation"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <Button
+        android:id="@+id/storyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="262dp"
+        android:layout_marginBottom="213dp"
+        android:text="@string/story_s"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
