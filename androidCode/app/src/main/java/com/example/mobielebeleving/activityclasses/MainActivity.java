@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
               navigateChooseLocationActivity();
             }
         });
-        Button dutch = findViewById(R.id.dutchTranslation);
+//        ImageButton dutch = findViewById(R.id.dutchButton);
         ImageButton info = findViewById(R.id.helpButton);
         info.setOnClickListener(new View.OnClickListener(){
             @Override
