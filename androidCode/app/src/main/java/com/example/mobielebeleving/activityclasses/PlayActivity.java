@@ -3,6 +3,7 @@ package com.example.mobielebeleving.activityclasses;
 import android.content.Intent;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -13,10 +14,21 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobielebeleving.FlashLightController;
+import com.example.mobielebeleving.MQTTHandler;
 import com.example.mobielebeleving.R;
 import com.example.mobielebeleving.Timer;
 
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttCallback;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.MqttSecurityException;
+
 public class PlayActivity extends AppCompatActivity {
+    private final static String TAG = "PlayActivity";
     private FlashLightController flashLightController;
     private ImageButton flashButton;
     private static boolean buttonIsReady = true;
@@ -56,6 +68,39 @@ public class PlayActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+            }
+        });
+
+        //connect with server
+        String clientId = "weewoo";
+        MqttAndroidClient client = new MqttAndroidClient(
+                this.getApplicationContext(),
+                "broker.hivemq.com:1883",
+                clientId);
+        //TODO fix error
+        //MQTTHandler.connect(client);
+
+        //subscribe to scanner channel
+        String topic = "avanstibreda/ti/1.4/a6/scanner";
+        int qos = 1;
+        MQTTHandler.subscribe(client, topic, qos);
+
+        final String MESSAGETAG = "messageReceived";
+        client.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                String totalString = "\" " + message + " \"" + "on topic: " + topic;
+                Log.d(MESSAGETAG, totalString);
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+
             }
         });
     }
