@@ -4,8 +4,8 @@
     <!-- "Mark Favorite", must appear as action button if possible. -->
     <item
         android:id="@+id/helpButton"
-        android:title="Test"
-        app:srcCompat="@android:drawable/ic_menu_help"
-        app:showAsAction="always"/>
+        android:icon="@android:drawable/ic_menu_help"
+        android:title=""
+        app:showAsAction="always" />
 
  </menu>
