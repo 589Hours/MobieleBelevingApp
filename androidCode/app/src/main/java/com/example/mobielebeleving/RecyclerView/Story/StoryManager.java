@@ -5,7 +5,6 @@ import android.content.Context;
 import com.example.mobielebeleving.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class StoryManager {
     private static Context appContext;
@@ -19,9 +18,9 @@ public class StoryManager {
     }
 
     private static void createStory() {
-        story.add(new Story("story 1", appContext.getString(R.string.story1), R.drawable.uilenrots));
-        story.add(new Story("story 2", appContext.getString(R.string.story2), R.drawable.droomreis));
-        story.add(new Story("story 3", appContext.getString(R.string.story3), R.drawable.de_zwevende_belg));
+        story.add(new Story("De Verloren Sleutel", appContext.getString(R.string.verhaal_de_verloren_sleutel), R.drawable.sleutel));
+        story.add(new Story("De Magische Zandloper", appContext.getString(R.string.verhaal_de_magische_zandloper), R.drawable.zandloper));
+        story.add(new Story("Het Geheim van de Verzonken Stad", appContext.getString(R.string.verhaal_het_geheim_van_de_verzonken_schat), R.drawable.verzonken_schat));
     }
 
     public static ArrayList<Story> getStory() {
