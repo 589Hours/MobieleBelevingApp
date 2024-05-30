@@ -4,5 +4,6 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="android:fontFamily">@font/kalamregular</item>
+        <item name="android:background">#000000</item>
     </style>
 </resources>
