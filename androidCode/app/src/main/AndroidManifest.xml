@@ -43,6 +43,22 @@
                 android:value="com.example.mobielebeleving.activityclasses.EnterCodeActivity" />
                    </activity>
 
+        <activity
+            android:name=".activityclasses.ChooseStoryActivity"
+            android:parentActivityName=".activityclasses.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".activityclasses.DetailStoryActivity"
+            android:parentActivityName=".activityclasses.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

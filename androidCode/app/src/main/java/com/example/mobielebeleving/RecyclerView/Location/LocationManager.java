@@ -1,4 +1,4 @@
-package com.example.mobielebeleving.RecyclerView;
+package com.example.mobielebeleving.RecyclerView.Location;
 
 import android.content.Context;
 
@@ -17,7 +17,7 @@ public class LocationManager {
         appContext = context;
     }
 
-    private static void createProject() {
+    private static void createLocation() {
         locations.add(new Location(appContext.getString(R.string.uilenRots), R.drawable.uilenrots));
         locations.add(new Location(appContext.getString(R.string.droomReis), R.drawable.droomreis));
         locations.add(new Location(appContext.getString(R.string.deZwevendeBelg), R.drawable.de_zwevende_belg));
@@ -25,14 +25,14 @@ public class LocationManager {
 
     public static ArrayList<Location> getLocations() {
         if (locations.size() == 0) {
-            createProject();
+            createLocation();
         }
         return locations;
     }
 
     public static Location getLocations(int id) {
         if (locations.size() == 0) {
-            createProject();
+            createLocation();
         }
         return locations.get(id);
     }

@@ -28,9 +28,14 @@
         - Verzamel ze allemaal en beleef het verhaal achter de attractie \n\n\n
     </string>
     <string name="toast">Deze code bestaat niet</string>
-    <string name="uilenRots" translatable="false">Uilenrots\n</string>
+    <string name="uilenRots" translatable="false">Uilenrots</string>
     <string name="droomReis" translatable="false">Droomreis</string>
     <string name="deZwevendeBelg" translatable="false">De zwevende Belg</string>
     <string name="locaties">Locaties</string>
     <string name="voer_code_in">Voer code in</string>
+    <string name="story_s">Verhalen</string>
+    <string name="verhalen">Verhalen</string>
+    <string name="story1" translatable="false">Er was eens...</string>
+    <string name="story2" translatable="false">Toen was er....</string>
+    <string name="story3" translatable="false">Maar toen...</string>
 </resources>
