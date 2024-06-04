@@ -24,7 +24,6 @@ import com.example.mobielebeleving.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button playButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +34,6 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-        playButton = findViewById(R.id.playButton);
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              navigateChooseLocationActivity();
-            }
         });
 
 
@@ -58,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 lm.updateResources("nl");
                 Toast toast = Toast.makeText(MainActivity.this,"Geselecteerde taal: Nederlands!", Toast.LENGTH_LONG);
                 toast.show();
+                welcomeTextView();
             }
         });
         english.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 lm.updateResources("en");
                 Toast toast = Toast.makeText(MainActivity.this,"Selected language: English!",Toast.LENGTH_LONG);
                 toast.show();
+                welcomeTextView();
             }
         });
         info.setOnClickListener(new View.OnClickListener(){
@@ -88,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
         });
         return builder.create();
     }
-    public void navigateChooseLocationActivity() {
-        Intent intent = new Intent(this, ChooseLocationActivity.class);
+    public void welcomeTextView(){
+        Intent intent = new Intent(this, WelcomeSpeech.class);
         startActivity(intent);
     }
+
 }
