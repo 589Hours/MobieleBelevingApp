@@ -3,4 +3,33 @@
     <string name="toast">This code doesn\'t exist</string>
     <string name="locaties">Locations</string>
     <string name="voer_code_in">Enter code</string>
+
+    <string name="openingText">Welcome! \n\n\n
+        Before we can embark ourselves into this adventure it is necessary to be informed about what are the possibilities
+        in the Esteling during your visit. U might have heard about the new elements the Esteling has added, these elements
+        form a new way of experiencing the attractions. To make this experience complete, we need you! You will be able to endulge
+        yourself in this new adventure that will be available at each and every attraction the Esteling offers. Each attraction has its own
+        storyline. But, these storylines are hidden. This is where you will partake. Are you able to collect every story? Down below u will find a short instruction. \n\n\n
+        - Choose the attraction you would like to visit \n
+        - Fill in the code on ur phone as soon as you enter the queue \n
+        - Search for the lit-up lights on the inside of each room \n
+        - Aim your flashlight at the construction beneath the light \n
+        - Press the flashlight button on your phone to activate a code \n
+        - If the light fades you have unlocked a new part of the story
+        - Collect all the parts of the attraction and experience the complete story \n
+        Have fun!!
+    </string>
+
+    <string name="helpDialog">
+        - Choose the attraction you would like to visit \n
+        - Fill in the code on ur phone as soon as you enter the queue \n
+        - Search for the lit-up lights on the inside of each room \n
+        - Aim your flashlight at the construction beneath the light \n
+        - Press the flashlight button on your phone to activate a code \n
+        - If the light fades you have unlocked a new part of the story \n
+        - Collect all the parts of the attraction and experience the complete story \n
+    </string>
+
+    <string name="helpTitel">Explanation</string>
+    <string name="roger">UNDERSTOOD</string>
 </resources>
