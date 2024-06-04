@@ -36,6 +36,6 @@
     <string name="deZwevendeBelg" translatable="false">De zwevende Belg</string>
     <string name="locaties">Locaties</string>
     <string name="voer_code_in">Voer code in</string>
-    <string name="helpTitel">Uitleg</string>
+    <string name="helpTitel">Hoe het werkt:</string>
     <string name="roger">BEGREPEN</string>
 </resources>
