@@ -9,6 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -34,16 +38,36 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        playButton = findViewById(R.id.playButton);
-        playButton.setOnClickListener(new View.OnClickListener() {
+
+        ImageButton dutch = findViewById(R.id.dutchButton);
+        ImageButton english = findViewById(R.id.englishButton);
+        ImageButton info = findViewById(R.id.helpButton);
+
+        LanguageManager lm = new LanguageManager(this);
+
+        dutch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navigateToChooseLocationActivity();
+                lm.updateResources("nl");
+                Toast toast = Toast.makeText(MainActivity.this,"Geselecteerde taal: Nederlands!", Toast.LENGTH_LONG);
+                toast.show();
+                welcomeTextView();
             }
         });
 
         storyButton = findViewById(R.id.storyButton);
         storyButton.setOnClickListener(new View.OnClickListener() {
+        english.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lm.updateResources("en");
+                Toast toast = Toast.makeText(MainActivity.this,"Selected language: English!",Toast.LENGTH_LONG);
+                toast.show();
+                welcomeTextView();
+            }
+        });
+        info.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 navigateToChooseStoryActivity();
@@ -74,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
     AlertDialog createDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Uitleg");
+        builder.setTitle(R.string.helpTitel);
         builder.setMessage(R.string.helpDialog);
-        builder.setPositiveButton("BEGREPEN", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.roger, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -84,14 +108,8 @@ public class MainActivity extends AppCompatActivity {
         });
         return builder.create();
     }
-
-    public void navigateToChooseLocationActivity() {
-        Intent intent = new Intent(this, ChooseLocationActivity.class);
-        startActivity(intent);
-    }
-
-    public void navigateToChooseStoryActivity() {
-        Intent intent = new Intent(this, ChooseStoryActivity.class);
+    public void welcomeTextView(){
+        Intent intent = new Intent(this, WelcomeSpeech.class);
         startActivity(intent);
     }
 }
