@@ -4,15 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.eclipse.paho</groupId>
-    <artifactId>org.eclipse.paho.android.service</artifactId>
     <packaging>pom</packaging>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>8</source>-->
+<!--                    <target>8</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
     <version>1.1.1</version>
 
     <repositories>
         <repository>
-            <id>repo.eclipse.org</id>
-            <name>Paho Repository - Releases</name>
+            <id>Eclipse Paho Repo</id>
             <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
         </repository>
     </repositories>
@@ -24,11 +33,9 @@
 
 <!--    Hier gaat het telkens fout-->
 
-<!--    <dependencies>-->
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.paho</groupId>-->
-<!--            <artifactId>org.eclipse.paho.android.service</artifactId>-->
-<!--            <version>1.1.1</version>-->
-<!--        </dependency>-->
-<!--    </dependencies>-->
+    <dependency>
+        <groupId>org.eclipse.paho</groupId>
+        <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+        <version>1.0.2</version>
+    </dependency>
 </project>

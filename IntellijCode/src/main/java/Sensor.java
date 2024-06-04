@@ -1,3 +1,7 @@
+package main.java;
+
+import org.eclipse.paho.client.mqttv3.MqttClient;
+
 import java.net.Socket;
 //import org.eclipse.paho.client.mqttv3.MqttClient;
 //import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -22,7 +26,8 @@ public class Sensor {
     public void ReadData() {
 
         while(socket.isConnected()) {
-//            MqttClient client
+            MqttClient mqttClient = new MqttClient();
+
         }
     }
 }
