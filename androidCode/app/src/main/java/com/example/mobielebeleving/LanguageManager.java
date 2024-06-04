@@ -1,4 +1,4 @@
-package com.example.mobielebeleving.activityclasses;
+package com.example.mobielebeleving;
 
 import android.content.Context;
 import android.content.res.Configuration;

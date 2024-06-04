@@ -15,8 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobielebeleving.R;
 
-public class WelcomeSpeech extends AppCompatActivity {
+public class WelcomeSpeechActivity extends AppCompatActivity {
     private Button playButton;
+    private Button storyButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +36,26 @@ public class WelcomeSpeech extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateChooseLocationActivity();
+                navigateToChooseLocationActivity();
+            }
+        });
+
+        storyButton = findViewById(R.id.storyButton);
+        storyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToChooseStoryActivity();
             }
         });
 
     }
-    public void navigateChooseLocationActivity() {
+    public void navigateToChooseLocationActivity() {
         Intent intent = new Intent(this, ChooseLocationActivity.class);
+        startActivity(intent);
+    }
+
+    public void navigateToChooseStoryActivity() {
+        Intent intent = new Intent(this, ChooseStoryActivity.class);
         startActivity(intent);
     }
 

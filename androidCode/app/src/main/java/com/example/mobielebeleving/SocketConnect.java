@@ -1,7 +1,6 @@
 package com.example.mobielebeleving;
 
 import android.os.Handler;
-import android.os.Looper;
 
 import com.example.mobielebeleving.RecyclerView.Story.StoryManager;
 import com.example.mobielebeleving.activityclasses.ChooseStoryActivity;
@@ -9,8 +8,6 @@ import com.example.mobielebeleving.activityclasses.ChooseStoryActivity;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 
 public class SocketConnect {
@@ -45,7 +42,7 @@ public class SocketConnect {
                             }
 
                             StoryManager.createStory();
-                            chooseStoryActivity.refreshStoryList();
+                            chooseStoryActivity.updateStoryList();
                         }
                     });
                     socket.close();

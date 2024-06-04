@@ -25,14 +25,56 @@ public class ChooseStoryActivity extends AppCompatActivity
         setContentView(R.layout.choose_story);
 
         StoryManager.setApplicationContext(getApplicationContext());
+        demonstratie();
+        updateStoryList();
+
+//        if (StoryManager.amountOfStory() != 0) {
+//            storyRecyclerView = findViewById(R.id.StoryRecyclerView);
+//            storyRecyclerViewAdapter = new StoryAdapter(this,
+//                    StoryManager.getStory(),
+//                    this);
+//            storyRecyclerView.setAdapter(storyRecyclerViewAdapter);
+//            storyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        }
     }
 
-    public void refreshStoryList(){
+    public void demonstratie() {
+        //Ter demonstratie, mag daarna weggehaald worden
+        Button verhaal1 = findViewById(R.id.button);
+        Button verhaal2 = findViewById(R.id.button2);
+        Button verhaal3 = findViewById(R.id.button3);
+        verhaal1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StoryManager.test = "1";
+                StoryManager.createStory();
+                updateStoryList();
+            }
+        });
+        verhaal2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StoryManager.test = "2";
+                StoryManager.createStory();
+                updateStoryList();
+            }
+        });
+        verhaal3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StoryManager.test = "3";
+                StoryManager.createStory();
+                updateStoryList();
+            }
+        });
+    }
+
+    public void updateStoryList(){
         if (StoryManager.amountOfStory() != 0) {
             storyRecyclerView = findViewById(R.id.StoryRecyclerView);
+//            storyRecyclerViewAdapter.storyUpdate(StoryManager.getStory());
             storyRecyclerViewAdapter = new StoryAdapter(this,
-                    StoryManager.getStory(),
-                    this);
+                    StoryManager.getStory(), this);
             storyRecyclerView.setAdapter(storyRecyclerViewAdapter);
             storyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         }

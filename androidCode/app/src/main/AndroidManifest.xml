@@ -8,9 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobieleBeleving">
-        <activity
-            android:name=".activityclasses.WelcomeSpeech"
-            android:exported="false" />
+
         <activity
             android:name=".activityclasses.MainActivity"
             android:exported="true">
@@ -20,12 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".activityclasses.ChooseLocationActivity"
+            android:name=".activityclasses.WelcomeSpeechActivity"
             android:parentActivityName=".activityclasses.MainActivity">
             <meta-data
+                 android:name="android.support.PARENT_ACTIVITY"
+                 android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".activityclasses.ChooseLocationActivity"
+            android:parentActivityName=".activityclasses.WelcomeSpeechActivity">
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+                android:value="com.example.mobielebeleving.activityclasses.WelcomeSpeechActivity" />
         </activity>
         <activity
             android:name=".activityclasses.EnterCodeActivity"
@@ -44,10 +51,10 @@
 
         <activity
             android:name=".activityclasses.ChooseStoryActivity"
-            android:parentActivityName=".activityclasses.MainActivity">
+            android:parentActivityName=".activityclasses.WelcomeSpeechActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+                android:value="com.example.mobielebeleving.activityclasses.WelcomeSpeechActivity" />
         </activity>
 
         <activity
