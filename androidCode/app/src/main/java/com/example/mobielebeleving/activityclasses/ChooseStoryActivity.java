@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,13 +25,17 @@ public class ChooseStoryActivity extends AppCompatActivity
         setContentView(R.layout.choose_story);
 
         StoryManager.setApplicationContext(getApplicationContext());
+    }
 
-        storyRecyclerView = findViewById(R.id.StoryRecyclerView);
-        storyRecyclerViewAdapter = new StoryAdapter(this,
-                StoryManager.getStory(),
-                this);
-        storyRecyclerView.setAdapter(storyRecyclerViewAdapter);
-        storyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    public void refreshStoryList(){
+        if (StoryManager.amountOfStory() != 0) {
+            storyRecyclerView = findViewById(R.id.StoryRecyclerView);
+            storyRecyclerViewAdapter = new StoryAdapter(this,
+                    StoryManager.getStory(),
+                    this);
+            storyRecyclerView.setAdapter(storyRecyclerViewAdapter);
+            storyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        }
     }
 
     @Override
