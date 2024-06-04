@@ -1,33 +1,57 @@
-package main.java;
-
-import org.eclipse.paho.client.mqttv3.MqttClient;
-
+import java.io.*;
 import java.net.Socket;
-//import org.eclipse.paho.client.mqttv3.MqttClient;
-//import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-//import org.eclipse.paho.client.mqttv3.MqttException;
-//import org.eclipse.paho.client.mqttv3.MqttMessage;
-//import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
 
 public class Sensor {
     private boolean isOn;
     private String topic;
     private final Socket socket;
+    private BufferedReader reader;
+    private BufferedWriter writer;
 
-    public Sensor(Socket socket, int sensorNumber) {
+    public Sensor(Socket socket) throws IOException {
         this.isOn = false;
-        this.topic = "avanstibreda/ti/1.4/a6/s" + sensorNumber;
         this.socket = socket;
 
-        Thread t = new Thread(this::ReadData);
+        this.reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        this.writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
+        Thread t = new Thread(() -> {
+            try {
+                ReadData();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         t.start();
     }
 
-    public void ReadData() {
+    public boolean isOn() {
+        return isOn;
+    }
 
-        while(socket.isConnected()) {
-            MqttClient mqttClient = new MqttClient();
+    public void ReadData() throws IOException {
 
+        while(true) {
+            String readData = reader.readLine();
+            if(readData == null) {
+                break;
+            }
+
+            if(readData.equals("scanned")) {
+                this.isOn = false;
+                Main.count();
+                Main.turnRandomOn();
+            }
         }
+
+    }
+
+    public void TurnOn() {
+        this.isOn = true;
+    }
+
+    public void TurnOff() {
+        this.isOn = false;
     }
 }
