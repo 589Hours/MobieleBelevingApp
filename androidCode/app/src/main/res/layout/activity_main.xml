@@ -19,10 +19,11 @@
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/recyclerView"
+        />
 
     <Button
         android:id="@+id/playButton"
@@ -39,32 +40,35 @@
         android:id="@+id/helpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
         android:translationY="5dp"
         android:contentDescription="question"
         app:layout_constraintEnd_toStartOf="@+id/englishTranslation"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+        app:srcCompat="@android:drawable/ic_menu_help"
+        style="@style/questionButton"
+        />
 
     <Button
         android:id="@+id/dutchTranslation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
         android:text="Dutch"
         android:translationY="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/questionButton"
+        />
 
     <Button
         android:id="@+id/englishTranslation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
         android:text="English"
         android:translationY="5dp"
         app:layout_constraintEnd_toStartOf="@+id/dutchTranslation"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/questionButton"
+        />
 
 
 

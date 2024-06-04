@@ -17,12 +17,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
-
+        app:layout_constraintVertical_bias="0.612"
+        style="@style/textView"
+        />
     <EditText
         android:id="@+id/codeInput"
+        style="@style/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="60dp"
         android:hint="Enter code"
         android:inputType="text"
@@ -65,6 +67,8 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoDetailImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/infoDetailImageView"
+        style="@style/textView"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
