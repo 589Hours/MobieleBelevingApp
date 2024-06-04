@@ -3,4 +3,6 @@
     <string name="toast">This code doesn\'t exist</string>
     <string name="locaties">Locations</string>
     <string name="voer_code_in">Enter code</string>
+    <string name="story_s">Story\'s</string>
+    <string name="verhalen">Story\'s</string>
 </resources>

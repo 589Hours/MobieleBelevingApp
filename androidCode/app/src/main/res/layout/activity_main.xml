@@ -15,15 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
@@ -34,39 +25,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+<!--    <Button-->
+<!--        android:id="@+id/dutchTranslation"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/black"-->
+<!--        android:text="Dutch"-->
+<!--        android:translationY="5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageButton
-        android:id="@+id/helpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
-        android:translationY="5dp"
-        android:contentDescription="question"
-        app:layout_constraintEnd_toStartOf="@+id/englishTranslation"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+<!--    <Button-->
+<!--        android:id="@+id/englishTranslation"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/black"-->
+<!--        android:text="English"-->
+<!--        android:translationY="5dp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/dutchTranslation"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
-        android:id="@+id/dutchTranslation"
+        android:id="@+id/storyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="Dutch"
-        android:translationY="5dp"
+        android:layout_marginBottom="213dp"
+        android:text="@string/story_s"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/englishTranslation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="English"
-        android:translationY="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/dutchTranslation"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,7 @@
-package com.example.mobielebeleving.RecyclerView;
+package com.example.mobielebeleving.RecyclerView.Location;
 
 public class Location {
     private String location;
-//    private String info;
     private int imageResourceId;
 
     public Location(String location, int imageResourceId) {

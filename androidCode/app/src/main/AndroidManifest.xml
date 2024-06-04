@@ -11,7 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MobieleBeleving">
+        android:theme="@style/AppTheme">
 
         <service android:name="org.eclipse.paho.android.service.MqttService" >
         </service>
@@ -51,6 +51,21 @@
                 android:value="com.example.mobielebeleving.activityclasses.EnterCodeActivity" />
                    </activity>
 
+        <activity
+            android:name=".activityclasses.ChooseStoryActivity"
+            android:parentActivityName=".activityclasses.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".activityclasses.DetailStoryActivity"
+            android:parentActivityName=".activityclasses.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+        </activity>
 
     </application>
 

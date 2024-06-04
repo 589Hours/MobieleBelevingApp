@@ -1,8 +1,12 @@
 package com.example.mobielebeleving.activityclasses;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -105,6 +109,35 @@ public class PlayActivity extends AppCompatActivity {
         });
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.helpButton) {
+            AlertDialog dialog = createDialog();
+            dialog.show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    AlertDialog createDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Uitleg");
+        builder.setMessage(R.string.helpDialog);
+        builder.setPositiveButton("BEGREPEN", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        return builder.create();
+    }
     public static void setReady(){
         buttonIsReady = true;
     }
