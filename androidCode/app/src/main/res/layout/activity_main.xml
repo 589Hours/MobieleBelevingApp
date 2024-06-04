@@ -19,11 +19,12 @@
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/recyclerView"
+        />
 
 
 
@@ -36,6 +37,7 @@
         android:backgroundTint="#000000"
         android:contentDescription="question"
         android:translationY="5dp"
+        style="@style/questionButton"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
         app:srcCompat="@android:drawable/ic_menu_help" />
@@ -53,9 +55,11 @@
         android:text="Dutch"
         android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="parent"
+        style="@style/questionButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
+        style="@style/questionButton"
     <ImageButton
         android:id="@+id/englishButton"
         android:layout_width="160dp"
