@@ -59,10 +59,10 @@
 
         <activity
             android:name=".activityclasses.DetailStoryActivity"
-            android:parentActivityName=".activityclasses.MainActivity">
+            android:parentActivityName=".activityclasses.ChooseStoryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mobielebeleving.activityclasses.MainActivity" />
+                android:value="com.example.mobielebeleving.activityclasses.ChooseStoryActivity" />
         </activity>
 
     </application>
