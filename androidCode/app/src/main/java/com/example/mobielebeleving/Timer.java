@@ -1,12 +1,26 @@
 package com.example.mobielebeleving;
 
+import android.content.Context;
+import android.widget.TextView;
+
 import com.example.mobielebeleving.activityclasses.PlayActivity;
 
 public class Timer implements Runnable{
     private int length;
-    public Timer(int length){
+    private Context context;
+    private TextView countdownView;
+    private final String countdownText;
+    private final String seconds;
+    private final String readyText;
+  
+    public Timer(int length, Context context, TextView view){
         //Length cannot and shall not be below 0 to avoid errors
         this.length = length;
+        this.context = context;
+        this.countdownView = view;
+        this.countdownText = context.getString(R.string.aftellen);
+        this.seconds = context.getString(R.string.seconden);
+        this.readyText = context.getString(R.string.klaar);
     }
     @Override
     public void run() {
@@ -16,11 +30,14 @@ public class Timer implements Runnable{
         }
         for (int i = length; i > 0; i--) {
             try {
+                String countdownToShow = countdownText + i + seconds;
+                countdownView.setText(countdownToShow);
                 Thread.sleep(750);
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 return;
             }
+            countdownView.setText(readyText);
         }
         PlayActivity.setReady();
     }

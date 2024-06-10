@@ -43,4 +43,7 @@
     <string name="roger">BEGREPEN</string>
     <string name="spelen">Spelen</string>
     <string name="sturen">Sturen</string>
+    <string name="aftellen">Flits beschikbaar in </string>
+    <string name="seconden"> seconden</string>
+    <string name="klaar">Flits is klaar voor gebruik</string>
 </resources>

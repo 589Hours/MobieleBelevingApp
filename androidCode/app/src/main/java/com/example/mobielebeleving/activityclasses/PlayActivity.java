@@ -38,6 +38,7 @@ public class PlayActivity extends AppCompatActivity {
         flashLightController = new FlashLightController((CameraManager) getSystemService(CAMERA_SERVICE));
 
 
+
         flashButton = findViewById(R.id.flashButton);
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,7 @@ public class PlayActivity extends AppCompatActivity {
                         preferably above two.
                         */
                         
-                        Thread countThread = new Thread(new Timer(3));
+                        Thread countThread = new Thread(new Timer(3, v.getContext(), findViewById(R.id.countdownText)));
                         countThread.start();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
