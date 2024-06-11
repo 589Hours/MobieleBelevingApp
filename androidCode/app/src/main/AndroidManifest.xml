@@ -43,10 +43,10 @@
         </activity>
         <activity
             android:name=".activityclasses.PlayActivity"
-            android:parentActivityName=".activityclasses.EnterCodeActivity">
+            android:parentActivityName=".activityclasses.ChooseLocationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mobielebeleving.activityclasses.EnterCodeActivity" />
+                android:value="com.example.mobielebeleving.activityclasses.ChooseLocationActivity" />
                    </activity>
 
         <activity
