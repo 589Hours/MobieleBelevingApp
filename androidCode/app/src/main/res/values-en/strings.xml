@@ -39,4 +39,5 @@
     <string name="seconden"> seconds</string>
     <string name="oké">Okay</string>
     <string name="wrongcode">This code doesn\'t exist</string>
+    <string name="geenverhalen">You haven\'t unlocked any story</string>
 </resources>

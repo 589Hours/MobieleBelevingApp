@@ -47,4 +47,5 @@
     <string name="klaar">Flits is klaar voor gebruik</string>
     <string name="oké">Oké</string>
     <string name="wrongcode">Deze code bestaat niet</string>
+    <string name="geenverhalen">Je hebt nog geen verhalen ontdekt</string>
 </resources>
