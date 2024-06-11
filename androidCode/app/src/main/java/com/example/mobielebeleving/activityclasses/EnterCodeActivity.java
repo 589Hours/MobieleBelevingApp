@@ -90,7 +90,7 @@ public class EnterCodeActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Uitleg");
         builder.setMessage(R.string.helpDialog);
-        builder.setPositiveButton("BEGREPEN", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.oké, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
