@@ -38,4 +38,5 @@
     <string name="klaar">Light flash is ready to use</string>
     <string name="seconden"> seconds</string>
     <string name="oké">Okay</string>
+    <string name="wrongcode">This code doesn\'t exist</string>
 </resources>

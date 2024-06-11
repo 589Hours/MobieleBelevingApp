@@ -46,4 +46,5 @@
     <string name="seconden"> seconden</string>
     <string name="klaar">Flits is klaar voor gebruik</string>
     <string name="oké">Oké</string>
+    <string name="wrongcode">Deze code bestaat niet</string>
 </resources>

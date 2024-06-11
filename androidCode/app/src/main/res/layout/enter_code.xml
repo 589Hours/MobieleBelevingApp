@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/voer_code_in"
@@ -17,9 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612"
-        style="@style/textView"
-        />
+        app:layout_constraintVertical_bias="0.612" />
+
     <EditText
         android:id="@+id/codeInput"
         style="@style/textView"
@@ -70,5 +70,19 @@
         app:layout_constraintTop_toBottomOf="@+id/infoDetailImageView"
         style="@style/textView"
         />
+
+    <TextView
+        android:id="@+id/wrongcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/wrongcode"
+        android:textColor="#FF0057"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/codeInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
