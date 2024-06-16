@@ -38,9 +38,8 @@ public class Sensor {
             if(readData == 'z') {
                 System.out.println("scan received");
                 this.isOn = false;
-//                TurnOn();
-//                Main.count();
-//                Main.turnRandomOn();
+                Main.count();
+                Main.turnRandomOn();
             }
         }
 
