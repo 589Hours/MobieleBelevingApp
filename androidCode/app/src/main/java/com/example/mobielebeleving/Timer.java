@@ -12,11 +12,13 @@ public class Timer implements Runnable{
     private final String countdownText;
     private final String seconds;
     private final String readyText;
+    private PlayActivity playActivity;
   
-    public Timer(int length, Context context, TextView view){
+    public Timer(int length, Context context, TextView view, PlayActivity playActivity){
         //Length cannot and shall not be below 0 to avoid errors
         this.length = length;
         this.context = context;
+        this.playActivity = playActivity;
         this.countdownView = view;
         this.countdownText = context.getString(R.string.aftellen);
         this.seconds = context.getString(R.string.seconden);
@@ -30,14 +32,18 @@ public class Timer implements Runnable{
         }
         for (int i = length; i > 0; i--) {
             try {
-                String countdownToShow = countdownText + i + seconds;
-                countdownView.setText(countdownToShow);
+                String countdownToShow = countdownText + " " +  i + " " +  seconds;
+
+                //set the text on the main thread otherwise activity crashes
+                playActivity.runOnUiThread(() -> countdownView.setText(countdownToShow));
+
                 Thread.sleep(750);
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 return;
             }
-            countdownView.setText(readyText);
+            //same here, if not set on ui thread the activity crashes
+            playActivity.runOnUiThread(()-> countdownView.setText(readyText));
         }
         PlayActivity.setReady();
     }

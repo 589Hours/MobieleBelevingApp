@@ -22,7 +22,7 @@ import com.example.mobielebeleving.RecyclerView.Story.StoryManager;
 import com.example.mobielebeleving.SocketConnect;
 
 public class MainActivity extends AppCompatActivity {
-    private final static String tag = EnterCodeActivity.class.getSimpleName();
+    private final static String TAG = EnterCodeActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
