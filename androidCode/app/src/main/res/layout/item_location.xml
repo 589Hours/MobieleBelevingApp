@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    style="@style/recyclerView"
+    >
 
     <ImageView
         android:id="@+id/lijstFoto"
@@ -26,5 +28,7 @@
         android:padding="16dp"
         android:text="Location"
         android:textColor="@android:color/black"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        style="@style/textView"
+        />
 </LinearLayout>

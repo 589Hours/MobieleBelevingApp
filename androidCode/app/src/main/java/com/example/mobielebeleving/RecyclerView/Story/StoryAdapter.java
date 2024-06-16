@@ -50,6 +50,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         clickListener = listener;
     }
 
+    public void storyUpdate(List<Story> story){
+        storylist = story;
+    }
+
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.d(LOGTAG, "onCreateViewHolder() called");

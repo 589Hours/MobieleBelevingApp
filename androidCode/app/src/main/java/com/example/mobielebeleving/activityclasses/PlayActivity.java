@@ -49,6 +49,7 @@ public class PlayActivity extends AppCompatActivity {
         flashLightController = new FlashLightController((CameraManager) getSystemService(CAMERA_SERVICE));
 
 
+
         flashButton = findViewById(R.id.flashButton);
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +66,7 @@ public class PlayActivity extends AppCompatActivity {
                         preferably above two.
                         */
                         
-                        Thread countThread = new Thread(new Timer(3));
+                        Thread countThread = new Thread(new Timer(3, v.getContext(), findViewById(R.id.countdownText)));
                         countThread.start();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -118,7 +119,7 @@ public class PlayActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Uitleg");
         builder.setMessage(R.string.helpDialog);
-        builder.setPositiveButton("BEGREPEN", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.oké, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

@@ -1,17 +1,28 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="Base.Light.Theme.MobieleBeleving" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/kalamregular</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHighlight">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:colorButtonNormal">@color/softGrey</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="textView">
+        <item name="android:background">@color/softBlue</item>
     </style>
+    <style name="recyclerView">
+        <item name="android:background">@color/softGrey</item>
+    </style>
+    <style name="questionButton">
+        <item name="backgroundTint">@color/softBlue</item>
+    </style>
+
+    <style name="Theme.MobieleBeleving" parent="Base.Light.Theme.MobieleBeleving" />
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
