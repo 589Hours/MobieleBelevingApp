@@ -31,7 +31,7 @@ import java.net.Socket;
 
 public class PlayActivity extends AppCompatActivity {
     private final static String TAG = "PlayActivity";
-    private final static String HOST_IP = ""; //insert IP of host
+    private final static String HOST_IP = "192.168.178.165"; //insert IP of host
     private FlashLightController flashLightController;
     private ImageButton flashButton;
     private TextView scoreCounter;

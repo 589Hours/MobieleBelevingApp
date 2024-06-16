@@ -38,6 +38,28 @@ public class Main {
             }
 
             if (character == 'a'){
+                if (apps.isEmpty()){
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            while (true){
+                                if (!apps.isEmpty()){
+                                    System.out.println("apps isn't empty");
+                                    try {
+                                        System.out.println("starting countdown to end game");
+
+                                        //set desired session length
+                                        Thread.sleep(120 * 1000);
+
+                                        endGame();
+                                    } catch (InterruptedException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
+                            }
+                        }
+                    }).start();
+                }
                 System.out.println("App added");
                 apps.add(new App(socket));
             }
