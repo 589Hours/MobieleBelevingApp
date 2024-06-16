@@ -18,24 +18,23 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobielebeleving.FlashLightController;
-import com.example.mobielebeleving.MQTTHandler;
 import com.example.mobielebeleving.R;
 import com.example.mobielebeleving.Timer;
 
-import org.eclipse.paho.android.service.MqttAndroidClient;
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.eclipse.paho.client.mqttv3.MqttSecurityException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
 
 public class PlayActivity extends AppCompatActivity {
     private final static String TAG = "PlayActivity";
     private FlashLightController flashLightController;
     private ImageButton flashButton;
     private static boolean buttonIsReady = true;
+    private BufferedReader reader;
+    private BufferedWriter writer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,37 +75,26 @@ public class PlayActivity extends AppCompatActivity {
         });
 
         //connect with server
-        String clientId = "weewoo";
-        MqttAndroidClient client = new MqttAndroidClient(
-                this.getApplicationContext(),
-                "broker.hivemq.com:1883",
-                clientId);
-        //TODO fix error
-        //MQTTHandler.connect(client);
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Socket socket = new Socket("192.168.178.165", 12345);
+                        socket.getOutputStream().write('a');
+                        socket.getOutputStream().flush();
+                        reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                        writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                        while (socket.isConnected()){
+                            String line = reader.readLine();
+                            Log.d(TAG, "android received " + line);
+                        }
 
-        //subscribe to scanner channel
-        String topic = "avanstibreda/ti/1.4/a6/scanner";
-        int qos = 1;
-        MQTTHandler.subscribe(client, topic, qos);
-
-        final String MESSAGETAG = "messageReceived";
-        client.setCallback(new MqttCallback() {
-            @Override
-            public void connectionLost(Throwable cause) {
-
-            }
-
-            @Override
-            public void messageArrived(String topic, MqttMessage message) throws Exception {
-                String totalString = "\" " + message + " \"" + "on topic: " + topic;
-                Log.d(MESSAGETAG, totalString);
-            }
-
-            @Override
-            public void deliveryComplete(IMqttDeliveryToken token) {
-
-            }
-        });
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

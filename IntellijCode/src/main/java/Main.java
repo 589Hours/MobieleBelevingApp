@@ -21,6 +21,11 @@ public class Main {
                 System.out.println("Sensor added");
                 sensors.add(new Sensor(socket));
             }
+
+            if (character == 'a'){
+                System.out.println("App added");
+                apps.add(new App(socket));
+            }
         }
     }
 
