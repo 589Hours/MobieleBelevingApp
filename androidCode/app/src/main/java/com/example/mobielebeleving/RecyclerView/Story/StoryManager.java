@@ -32,7 +32,7 @@ public class StoryManager {
             added1 = true;
         }
         if (test.equals("2") && !added2) {
-            story.add(new Story("De Magische Zandloper", appContext.getString(R.string.verhaal_de_magische_zandloper), R.drawable.zandloper));
+            story.add(new Story("Het ontstaan van de Uilenrots", appContext.getString(R.string.de_uilenrots_verhaal), R.drawable.uil));
             added2 = true;
         } if (test.equals("3") && !added3) {
             story.add(new Story("Het Geheim van de Verzonken Stad", appContext.getString(R.string.verhaal_het_geheim_van_de_verzonken_schat), R.drawable.verzonken_schat));
