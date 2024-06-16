@@ -14,4 +14,5 @@
     <color name="colorTextBackground">#CCFF99</color>
     <color name="colorRecyclerViewItemBackground">#99D6FF</color>
     <color name="colorListViewItemBackground">#FFCC99</color>
+    <color name="action_bar_color">#FFEB3B</color>
 </resources>
