@@ -19,7 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.mobielebeleving.LanguageManager;
 import com.example.mobielebeleving.R;
 import com.example.mobielebeleving.RecyclerView.Story.StoryManager;
-import com.example.mobielebeleving.SocketConnect;
+
 
 public class MainActivity extends AppCompatActivity {
     private final static String TAG = EnterCodeActivity.class.getSimpleName();
@@ -66,36 +66,6 @@ public class MainActivity extends AppCompatActivity {
         StoryManager.setApplicationContext(this);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == R.id.helpButton) {
-//            AlertDialog dialog = createDialog();
-//            dialog.show();
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
-//    AlertDialog createDialog() {
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle(R.string.helpTitel);
-//        builder.setMessage(R.string.helpDialog);
-//        builder.setPositiveButton(R.string.roger, new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//
-//            }
-//        });
-//        return builder.create();
-//    }
     public void welcomeTextView(){
         Intent intent = new Intent(this, WelcomeSpeechActivity.class);
         startActivity(intent);

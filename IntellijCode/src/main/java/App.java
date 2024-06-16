@@ -36,7 +36,7 @@ public class App {
             writer.write(unlockCode + "\n");
             writer.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("didn't send, because nothing to send to");
         }
 
     }

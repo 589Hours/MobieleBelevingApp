@@ -4,7 +4,6 @@ import java.net.Socket;
 
 public class Sensor {
     private boolean isOn;
-    private String topic;
     private final Socket socket;
     private InputStream reader;
     private DataOutputStream writer;

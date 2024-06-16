@@ -30,7 +30,7 @@ public class Main {
         while(true) {
             Socket socket = serversocket.accept();
             char character = (char) socket.getInputStream().read();
-            System.out.println(character);
+            System.out.println("Server got character: " + character);
 
             if(character == 's') {
                 System.out.println("Sensor added");
@@ -66,7 +66,7 @@ public class Main {
     public static void endGame() {
         System.out.println("endGame called");
         //logica voor de verhalen unlocken
-        String code = "unlock:1";
+        String code = "unlock:2";
 
         for (int i = 0; i < apps.size(); i++) {
             App app = apps.get(i);

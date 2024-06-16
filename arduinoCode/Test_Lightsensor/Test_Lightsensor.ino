@@ -22,15 +22,12 @@ const int LINE_LENGTH = 16;
 //const char* WLAN_SSID = "rychardus";
 //const char* WLAN_ACCESS_KEY = "wifishit";
 
-//wifi Rik thuis
-const char* WLAN_SSID = "vanham";
-const char* WLAN_ACCESS_KEY = "20F!garoenGepetto23";
-
 //Rick wifi thuis
 // const char* WLAN_SSID = "TMNL-6FF731";
 // const char* WLAN_ACCESS_KEY = "5ASQGA8CGPS4SHY3";
 
-const char* host = "192.168.178.165";
+//insert host IP
+const char* host = "";
 const uint16_t port = 12345;
 
 WiFiClient wifiClient;
@@ -80,6 +77,7 @@ void loop() {
     if(analogValue > 4000) {
      active = !active;
      digitalWrite(LED_PIN, LOW);
+     //send z when scanned
      wifiClient.write("z");
     }
         // Serial.print("Analog read: ");
