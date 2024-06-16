@@ -6,15 +6,15 @@ public class Sensor {
     private boolean isOn;
     private String topic;
     private final Socket socket;
-    private BufferedReader reader;
-    private BufferedWriter writer;
+    private InputStream reader;
+    private DataOutputStream writer;
 
     public Sensor(Socket socket) throws IOException {
         this.isOn = false;
         this.socket = socket;
 
-        this.reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        this.writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        this.reader = socket.getInputStream();
+        this.writer = new DataOutputStream(socket.getOutputStream());
 
         Thread t = new Thread(() -> {
             try {
@@ -33,21 +33,27 @@ public class Sensor {
     public void ReadData() throws IOException {
 
         while(true) {
-            String readData = reader.readLine();
-            if(readData == null) {
-                break;
-            }
+            char readData = (char) reader.read();
 
-            if(readData.equals("scanned")) {
+            if(readData == 'z') {
+                System.out.println("scan received");
                 this.isOn = false;
-                Main.count();
-                Main.turnRandomOn();
+//                TurnOn();
+//                Main.count();
+//                Main.turnRandomOn();
             }
         }
 
     }
 
     public void TurnOn() {
+        try {
+            //send letter O van opnieuw
+            writer.writeChar('O');
+            writer.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         this.isOn = true;
     }
 
