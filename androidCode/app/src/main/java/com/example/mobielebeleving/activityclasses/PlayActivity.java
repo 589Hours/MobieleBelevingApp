@@ -3,6 +3,7 @@ package com.example.mobielebeleving.activityclasses;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,7 +33,7 @@ public class PlayActivity extends AppCompatActivity {
     private final static String TAG = "PlayActivity";
     private final static String HOST_IP = "192.168.178.165";
     private FlashLightController flashLightController;
-    private ImageButton flashButton;
+    private static ImageButton flashButton;
     private static boolean buttonIsReady = true;
 
     @Override
@@ -58,6 +59,7 @@ public class PlayActivity extends AppCompatActivity {
                     Thread flashThread = new Thread(flashLightController);
                     flashThread.start();
                     buttonIsReady = false;
+                    flashButton.setBackgroundColor(Color.RED);
                     try {
                         flashThread.join();
 
@@ -65,7 +67,7 @@ public class PlayActivity extends AppCompatActivity {
                         time length is optional, but keep it above 0
                         preferably above two.
                         */
-                        
+
                         Thread countThread = new Thread(new Timer(3, v.getContext(), findViewById(R.id.countdownText), playActivity));
                         countThread.start();
                     } catch (InterruptedException e) {
@@ -133,5 +135,6 @@ public class PlayActivity extends AppCompatActivity {
     }
     public static void setReady(){
         buttonIsReady = true;
+        flashButton.setBackgroundColor(Color.GREEN);
     }
 }
