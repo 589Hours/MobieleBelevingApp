@@ -48,7 +48,10 @@ public class Main {
                                     try {
                                         System.out.println("starting countdown to end game");
 
-                                        //set desired session length
+                                        /*
+                                        set desired session length
+                                        seconds * factor 1000 for milliseconds.
+                                         */
                                         Thread.sleep(120 * 1000);
 
                                         endGame();
