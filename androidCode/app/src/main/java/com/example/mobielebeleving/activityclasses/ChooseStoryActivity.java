@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,14 +20,20 @@ public class ChooseStoryActivity extends AppCompatActivity
         implements AdapterView.OnItemClickListener, StoryAdapter.OnItemClickListener {
     private RecyclerView storyRecyclerView;
     private StoryAdapter storyRecyclerViewAdapter;
+    private TextView geenVerhalen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_story);
+        geenVerhalen = findViewById(R.id.geenverhalen);
 
         StoryManager.setApplicationContext(getApplicationContext());
         demonstratie();
         updateStoryList();
+
+        if (StoryManager.amountOfStory() == 0) {
+            geenVerhalen.setVisibility(View.VISIBLE);
+        }
 
 //        if (StoryManager.amountOfStory() != 0) {
 //            storyRecyclerView = findViewById(R.id.StoryRecyclerView);
@@ -77,6 +84,7 @@ public class ChooseStoryActivity extends AppCompatActivity
                     StoryManager.getStory(), this);
             storyRecyclerView.setAdapter(storyRecyclerViewAdapter);
             storyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            geenVerhalen.setVisibility(View.GONE);
         }
     }
 

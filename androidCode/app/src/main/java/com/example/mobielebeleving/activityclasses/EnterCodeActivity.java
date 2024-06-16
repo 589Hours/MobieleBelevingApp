@@ -1,9 +1,11 @@
 package com.example.mobielebeleving.activityclasses;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +28,7 @@ import com.example.mobielebeleving.R;
 public class EnterCodeActivity extends AppCompatActivity {
     public static final String EXTRA_INFO_ID = "infoId";
     private final static String tag = EnterCodeActivity.class.getSimpleName();
+    private TextView invaledCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +36,10 @@ public class EnterCodeActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.enter_code);
 
+        invaledCode = findViewById(R.id.wrongcode);
+
         EditText codeInput = findViewById(R.id.codeInput);
         Button submitButton = findViewById(R.id.submitButton);
-        CodeChecker codeChecker = new CodeChecker();
 
         int id = getIntent().getExtras().getInt(EXTRA_INFO_ID);
         Location location = LocationManager.getLocations(id);
@@ -50,8 +54,7 @@ public class EnterCodeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String code = codeInput.getText().toString();
-                codeChecker.setCode(code);
-                if(codeChecker.checkCode(v.getContext())) {
+                if(checkCode(code)) {
                     navigateToPlayActivity();
                 }
             }
@@ -62,6 +65,19 @@ public class EnterCodeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public Boolean checkCode(String code) {
+        Log.d(tag, code);
+        invaledCode = findViewById(R.id.wrongcode);
+        if ("123".equals(code)) {
+            invaledCode.setVisibility(View.GONE);
+            return true;
+        } else {
+            Log.d(tag, "Invalid code");
+            invaledCode.setVisibility(View.VISIBLE);
+            return false;
+        }
     }
 
     public void navigateToPlayActivity() {
@@ -90,7 +106,7 @@ public class EnterCodeActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Uitleg");
         builder.setMessage(R.string.helpDialog);
-        builder.setPositiveButton("BEGREPEN", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.oké, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

@@ -32,7 +32,12 @@
     </string>
 
     <string name="helpTitel">How it works:</string>
-    <string name="roger">UNDERSTOOD</string>
     <string name="spelen">Play</string>
     <string name="sturen">Send</string>
+    <string name="aftellen">Light flash available in </string>
+    <string name="klaar">Light flash is ready to use</string>
+    <string name="seconden"> seconds</string>
+    <string name="oké">Okay</string>
+    <string name="wrongcode">This code doesn\'t exist</string>
+    <string name="geenverhalen">You haven\'t unlocked any story</string>
 </resources>
