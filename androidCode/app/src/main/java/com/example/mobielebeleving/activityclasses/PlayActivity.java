@@ -30,6 +30,7 @@ import java.net.Socket;
 
 public class PlayActivity extends AppCompatActivity {
     private final static String TAG = "PlayActivity";
+    private final static String HOST_IP = "192.168.178.165";
     private FlashLightController flashLightController;
     private ImageButton flashButton;
     private static boolean buttonIsReady = true;
@@ -46,10 +47,9 @@ public class PlayActivity extends AppCompatActivity {
         });
 
         flashLightController = new FlashLightController((CameraManager) getSystemService(CAMERA_SERVICE));
-
-
-
         flashButton = findViewById(R.id.flashButton);
+
+        //have to give the activity with the countdown thread so we can use runOnUiThread()
         PlayActivity playActivity = PlayActivity.this;
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,12 +80,15 @@ public class PlayActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
-                        Socket socket = new Socket("192.168.178.165", 12345);
+                        //connect to server, ip will be filled in at presentation
+                        Socket socket = new Socket(HOST_IP, 12345);
                         socket.getOutputStream().write('a');
                         socket.getOutputStream().flush();
 
                         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
+                        //keep checking if app receives something from server
                         while (socket.isConnected()){
                             String line = reader.readLine();
                             Log.d(TAG, "android received " + line);

@@ -33,12 +33,16 @@ public class Timer implements Runnable{
         for (int i = length; i > 0; i--) {
             try {
                 String countdownToShow = countdownText + " " +  i + " " +  seconds;
+
+                //set the text on the main thread otherwise activity crashes
                 playActivity.runOnUiThread(() -> countdownView.setText(countdownToShow));
+
                 Thread.sleep(750);
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 return;
             }
+            //same here, if not set on ui thread the activity crashes
             playActivity.runOnUiThread(()-> countdownView.setText(readyText));
         }
         PlayActivity.setReady();

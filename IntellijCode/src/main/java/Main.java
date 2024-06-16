@@ -35,7 +35,7 @@ public class Main {
     }
 
     //dit aanroepen wanneer de tijd over is
-    public void endGame() throws IOException {
+    public void endGame() {
         //logica voor de verhalen unlocken
         String code = "";
 

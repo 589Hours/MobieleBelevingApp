@@ -11,8 +11,13 @@ public class App {
         this.writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
     }
 
-    public void writeScore(int score) throws IOException {
-        writer.write(score);
+    public void writeScore(int score){
+        try {
+            writer.write(score);
+            writer.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void unlockStories(String unlockCode) {
