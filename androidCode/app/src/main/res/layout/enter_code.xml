@@ -12,6 +12,7 @@
         style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="@string/voer_code_in"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,6 +29,7 @@
         android:layout_marginTop="60dp"
         android:hint="Enter code"
         android:inputType="text"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +42,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="160dp"
+        android:padding="10dp"
         android:text="@string/sturen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
@@ -59,17 +62,17 @@
 
     <TextView
         android:id="@+id/projectTitel"
+        style="@style/textView"
         android:layout_width="232dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:gravity="center"
+        android:padding="10dp"
         android:text="@string/uilenRots"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoDetailImageView"
-        style="@style/textView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/infoDetailImageView" />
 
     <TextView
         android:id="@+id/wrongcode"
