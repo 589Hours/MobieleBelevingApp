@@ -39,13 +39,14 @@ public class Sensor {
                 System.out.println("scan received");
                 this.isOn = false;
                 Main.count();
-                Main.turnRandomOn();
+                turnOn();
+//                Main.turnRandomOn();
             }
         }
 
     }
 
-    public void TurnOn() {
+    public void turnOn() {
         try {
             //send letter O van opnieuw
             writer.writeChar('O');
@@ -56,7 +57,7 @@ public class Sensor {
         this.isOn = true;
     }
 
-    public void TurnOff() {
+    public void turnOff() {
         this.isOn = false;
     }
 }

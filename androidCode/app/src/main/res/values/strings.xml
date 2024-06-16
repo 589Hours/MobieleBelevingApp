@@ -28,7 +28,7 @@
         - Als het lampje uit gaat speel jij een nieuw deel van het verhaal vrij \n
         - Verzamel ze allemaal en beleef het verhaal achter de attractie \n\n\n
     </string>
-
+    <string name="score" translatable="false">Score</string>
     <string name="toast">Deze code bestaat niet</string>
     <string name="uilenRots" translatable="false">Uilenrots</string>
     <string name="droomReis" translatable="false">Droomreis</string>

@@ -3,6 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     private static ArrayList<Sensor> sensors = new ArrayList<>();
@@ -10,6 +11,20 @@ public class Main {
 
     private static int counter = 0;
     public static void main(String[] args) throws IOException {
+
+        /* for now, it's console input however timer? */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    Scanner scanner = new Scanner(System.in);
+                    if(scanner.nextLine().equals("end")){
+                        endGame();
+                    }
+                }
+            }
+        }).start();
+
         ServerSocket serversocket = new ServerSocket(12345);
 
         while(true) {
@@ -30,17 +45,36 @@ public class Main {
     }
 
     //telt hoeveel sensoren er gescanned zijn
-    public static void count() {
+    public synchronized static void count() {
         counter++;
+        updateCounter();
+    }
+
+    private synchronized static void updateCounter() {
+        for (int i = 0; i < apps.size(); i++) {
+            App app = apps.get(i);
+            //check if someone leaves mid-game
+            if (!app.isConnected()){
+                apps.remove(app);
+            }
+            app.writeScore(counter);
+        }
     }
 
     //dit aanroepen wanneer de tijd over is
-    public void endGame() {
+    public static void endGame() {
+        System.out.println("endGame called");
         //logica voor de verhalen unlocken
-        String code = "";
+        String code = "unlock:1";
 
-        for (App app: apps) {
-            app.writeScore(counter);
+        for (int i = 0; i < apps.size(); i++) {
+            App app = apps.get(i);
+
+            if (!app.isConnected()){
+                apps.remove(app);
+                continue;
+            }
+            
             app.unlockStories(code);
             counter = 0;
         }
@@ -54,6 +88,6 @@ public class Main {
             turnRandomOn();
         }
 
-        sensors.get(randomInt).TurnOn();
+        sensors.get(randomInt).turnOn();
     }
 }

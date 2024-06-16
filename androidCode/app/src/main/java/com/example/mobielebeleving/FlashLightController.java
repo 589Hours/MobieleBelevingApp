@@ -20,7 +20,7 @@ public class FlashLightController implements Runnable{
     public void flash(){
         try{
             cameraManager.setTorchMode(cameraID,true);
-            Thread.sleep(750);
+            Thread.sleep(100);
             cameraManager.setTorchMode(cameraID, false);
         } catch (CameraAccessException | InterruptedException e) {
             e.printStackTrace();
