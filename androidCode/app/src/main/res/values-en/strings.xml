@@ -5,30 +5,16 @@
     <string name="voer_code_in">Enter code</string>
     <string name="verhalen">Story\'s</string>
 
-    <string name="openingText">Welcome!
-        \n\n\nBefore we can embark ourselves into this adventure it is necessary to be informed about what are the possibilities
-        in the Esteling during your visit. U might have heard about the new elements the Esteling has added, these elements
-        form a new way of experiencing the attractions. To make this experience complete, we need you! You will be able to endulge
-        yourself in this new adventure that will be available at each and every attraction the Esteling offers. Each attraction has its own
-        storyline. But, these storylines are hidden. This is where you will partake. Are you able to collect every story? Down below u will find a short instruction. \n\n\n
-        - Choose the attraction you would like to visit \n
-        - Fill in the code on ur phone as soon as you enter the queue \n
-        - Search for the lit-up lights on the inside of each room \n
-        - Aim your flashlight at the construction beneath the light \n
-        - Press the flashlight button on your phone to activate a code \n
-        - If the light fades you have unlocked a new part of the story \n
-        - Collect all the parts of the attraction and experience the complete story
-        \n\nHave fun!!
-    </string>
+    <string name="openingText">"Welcome!\n\nBefore we can embark ourselves into this adventure it is necessary to be informed about what are the possibilities\nin the Essteling during your visit. U might have heard about the new elements the Essteling has added, these elements\nform a new way of experiencing the attractions. To make this experience complete, we need you!\nYou will be able to endulge\nyourself in this new adventure that will be available at each and every attraction the Essteling offers. Each attraction has its own\nstoryline. But, these storylines are hidden. This is where you will partake. Are you able to collect every story? Down below u will find a short instruction.\n\n- Choose the attraction you would like to visit\n- Fill in the code on ur phone as soon as you enter the queue\n- Search for the lit-up lights on the inside of each room\n- Aim your flashlight at the construction beneath the light\n- Press the flashlight button on your phone to activate a code\n- If the light fades you have unlocked a new part of the story\n- Collect all the parts of the attraction and experience the complete story\n\nHave fun!!     "</string>
 
     <string name="helpDialog">
-        - Choose the attraction you would like to visit \n
-        - Fill in the code on ur phone as soon as you enter the queue \n
-        - Search for the lit-up lights on the inside of each room \n
-        - Aim your flashlight at the construction beneath the light \n
-        - Press the flashlight button on your phone to activate a code \n
-        - If the light fades you have unlocked a new part of the story \n
-        - Collect all the parts of the attraction and experience the complete story \n
+        - Choose the attraction you would like to visit\n
+        - Fill in the code on ur phone as soon as you enter the queue\n
+        - Search for the lit-up lights on the inside of each room\n
+        - Aim your flashlight at the construction beneath the light\n
+        - Press the flashlight button on your phone to activate a code\n
+        - If the light fades you have unlocked a new part of the story\n
+        - Collect all the parts of the attraction and experience the complete story\n
     </string>
 
     <string name="helpTitel">How it works:</string>
@@ -36,8 +22,14 @@
     <string name="sturen">Send</string>
     <string name="aftellen">Light flash available in </string>
     <string name="klaar">Light flash is ready to use</string>
-    <string name="seconden"> seconds</string>
+    <string name="seconden">" Seconds"</string>
     <string name="oké">Okay</string>
     <string name="wrongcode">This code doesn\'t exist</string>
     <string name="geenverhalen">You haven\'t unlocked any story</string>
+    <string name="verhaal_de_verloren_sleutel">Mia lived in a quiet village, surrounded by lush forests. One sunny morning she discovered that her old, trusty set of keys was missing. Panic flooded her as these keys opened the doors to her fondest memories. She searched every corner of her house, but in vain.  With a frustrated sigh, Mia decided to head into the village, hoping that the keys had fallen somewhere in the lush greenery. She searched for hours, until the sun began to set. Just as she was about to give up hope, something sparkled among the bushes.  There lay her set of keys, glistening in the last light of the day. She picked up the keys with a feeling of relief and joy. As she walked back home, Mia realized that sometimes to find what we\'re looking for, we must first be lost.</string>
+    <string name="de_uilenrots_verhaal">The Origin History\nOwl Rock, a spectacular roller coaster in the Essteling amusement park, is based on legends about giant owls that protected travelers and assisted them with wisdom. This roller coaster was designed to take visitors on an adventurous journey through the mythical world of the Owl Rock, with an imposing owl as a central figure.\n\nConstruction and Design\nOwl Rock was opened in 1997 and is a covered steel roller coaster, built by the famous roller coaster manufacturer Intamin. The track is 850 meters long, reaches a height of 27 meters and has a maximum speed of 75 km/h. The design and theming are mainly the work of the talented designer Hans de Groot, who is known for his imaginative and detailed theme parks.\n\nExperience\nThe ride starts in a mysterious cave, after which visitors take an exciting journey through an environment full of light and sound effects that create the illusion of flight through Owl Rock. The roller coaster has no inversions, but offers enough speed and turns to guarantee an adrenaline rush. The attractions soundtrack, composed by Kees van Zanten, plays a crucial role in creating the right atmosphere and tension.\n\nFacts about Owl Rock\nOpening:\n-Owl Rock was opened in 1997.\n-Length and Speed: The track is 850 meters long and reaches a top speed of 75 km/h.\n-Trains: The roller coaster has four trains, each with five cars that can accommodate 20 riders per train.\n-Theme: Based on mythical stories about giant owls that provide protection and wisdom.\n-Unique Features: The attraction has an onboard sound system with a specially composed soundtrack that plays during the ride.\n\nWhy Visit?\nOwl Rock is a must-see for lovers of high-speed roller coasters and adventure stories . It offers a unique combination of speed, theme and narrative, making it a popular attraction in the Essteling. The roller coaster is designed to offer visitors of all ages an exciting and unforgettable experience, complete with the magic and enchantment that makes the Essteling so special.</string>
+    <string name="verhaal_het_geheim_van_de_verzonken_schat">Deep beneath the ocean\'s surface, hidden from prying eyes, lay a sunken city, shrouded in mystery and legend. Its glittering towers and ancient ruins had once been home to a thriving civilization, but now it rested at the bottom of the sea, forgotten by the world above.  One stormy night, when the waves were splashing high and thunder was rolling over the sea, a brave explorer named Alex set out to unravel the secret of the sunken city. With an ancient map in his hand and a fire in his heart, he navigated the tumultuous waters in search of the legendary underwater kingdom.  When he finally reached the sunken city, Alex was overwhelmed by its beauty and mystery. He dived deep beneath the waves, his breath mingling with the song of the sea, and entered the ancient streets of the city.  As he walked the deserted hallways, Alex discovered clues and artifacts that told him about the glory and fall of the ancient civilization. He felt the echoes of their stories resonating through the ruins, like whispers from times long past.  Finally, in the heart of the sunken city, Alex found the secret he was looking for: an ancient temple dedicated to the protection of the city and its inhabitants. There, in the sanctuary of the temple, he discovered an artifact that was the key to unraveling the mystery of the sunken city.  With the artifact in his hand and the knowledge in his heart, Alex returned to the surface, his mission accomplished but his adventure not yet over. As he braved the waves and sailed home, he knew that the memory of the sunken city would remain in his mind forever, as an eternal symbol of discovery and adventure.</string>
+    <string name="verhaal_de_verloren_sleutel_titel">The lost key</string>
+    <string name="de_uilenrots_verhaal_titel">The origins of the Owl Rock</string>
+    <string name="verhaal_het_geheim_van_de_verzonken_schat_titel">" The secret of the sunken city"</string>
 </resources>
