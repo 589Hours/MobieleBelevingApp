@@ -35,7 +35,7 @@ public class PlayActivity extends AppCompatActivity {
     private final static String TAG = "PlayActivity";
     private final static String HOST_IP = "192.168.178.165"; //insert IP of host
     private FlashLightController flashLightController;
-    private ImageButton flashButton;
+    private static ImageButton flashButton;
     private TextView scoreCounter;
     private static boolean buttonIsReady = true;
 

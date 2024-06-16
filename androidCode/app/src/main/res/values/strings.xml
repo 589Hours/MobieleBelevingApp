@@ -26,4 +26,5 @@
     <string name="verhaal_de_verloren_sleutel_titel">De verloren sleutel</string>
     <string name="de_uilenrots_verhaal_titel">Het ontstaan van de Uilenrots</string>
     <string name="verhaal_het_geheim_van_de_verzonken_schat_titel">Het geheim van de verzonken Stad\n</string>
+    <string name="score" translatable="false">Score</string>
 </resources>

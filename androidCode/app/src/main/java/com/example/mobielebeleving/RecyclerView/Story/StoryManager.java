@@ -29,14 +29,13 @@ public class StoryManager {
 
     public static void createStory() {
         if (storyToUnlock.equals("1") && !added1) {
-            story.add(new Story("De Verloren Sleutel", appContext.getString(R.string.verhaal_de_verloren_sleutel), R.drawable.sleutel));
+            story.add(new Story(appContext.getString(R.string.verhaal_de_verloren_sleutel_titel), appContext.getString(R.string.verhaal_de_verloren_sleutel), R.drawable.sleutel));
             added1 = true;
-        }
-        if (storyToUnlock.equals("2") && !added2) {
-            story.add(new Story("De Magische Zandloper", appContext.getString(R.string.verhaal_de_magische_zandloper), R.drawable.zandloper));
+        } if (storyToUnlock.equals("2") && !added2) {
+            story.add(new Story(appContext.getString(R.string.de_uilenrots_verhaal_titel), appContext.getString(R.string.de_uilenrots_verhaal), R.drawable.uil));
             added2 = true;
         } if (storyToUnlock.equals("3") && !added3) {
-            story.add(new Story("Het Geheim van de Verzonken Stad", appContext.getString(R.string.verhaal_het_geheim_van_de_verzonken_schat), R.drawable.verzonken_schat));
+            story.add(new Story(appContext.getString(R.string.verhaal_het_geheim_van_de_verzonken_schat_titel), appContext.getString(R.string.verhaal_het_geheim_van_de_verzonken_schat), R.drawable.verzonken_schat));
             added3 = true;
         }
     }
