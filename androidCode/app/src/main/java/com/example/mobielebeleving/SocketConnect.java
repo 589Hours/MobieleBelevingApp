@@ -34,11 +34,11 @@ public class SocketConnect {
                         @Override
                         public void run() {
                             if (line.equals("story completed 1")) {
-                                StoryManager.test = "1";
+                                StoryManager.storyToUnlock = "1";
                             } else if (line.equals("story completed 2")) {
-                                StoryManager.test = "2";
+                                StoryManager.storyToUnlock = "2";
                             } else if (line.equals("story completed 3")) {
-                                StoryManager.test = "3";
+                                StoryManager.storyToUnlock = "3";
                             }
 
                             StoryManager.createStory();

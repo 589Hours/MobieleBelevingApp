@@ -61,11 +61,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //idk storyManager setup? (Fedde can explain more)
         StoryManager.run();
-        ChooseStoryActivity chooseStoryActivity = new ChooseStoryActivity();
-
-        SocketConnect socketConnect = new SocketConnect(chooseStoryActivity);
-        socketConnect.createSocket();
+        StoryManager.setApplicationContext(this);
     }
 
 //    @Override

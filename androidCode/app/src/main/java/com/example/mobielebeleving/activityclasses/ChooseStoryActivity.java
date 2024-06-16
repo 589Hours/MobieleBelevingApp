@@ -53,7 +53,7 @@ public class ChooseStoryActivity extends AppCompatActivity
         verhaal1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StoryManager.test = "1";
+                StoryManager.storyToUnlock = "1";
                 StoryManager.createStory();
                 updateStoryList();
             }
@@ -61,7 +61,7 @@ public class ChooseStoryActivity extends AppCompatActivity
         verhaal2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StoryManager.test = "2";
+                StoryManager.storyToUnlock = "2";
                 StoryManager.createStory();
                 updateStoryList();
             }
@@ -69,7 +69,7 @@ public class ChooseStoryActivity extends AppCompatActivity
         verhaal3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StoryManager.test = "3";
+                StoryManager.storyToUnlock = "3";
                 StoryManager.createStory();
                 updateStoryList();
             }

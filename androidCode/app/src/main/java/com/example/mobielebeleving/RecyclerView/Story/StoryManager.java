@@ -9,10 +9,11 @@ import java.util.ArrayList;
 public class StoryManager {
     private static Context appContext;
     private static ArrayList<Story> story = new ArrayList<>();
-    public static String test;
+    public static String storyToUnlock;
     private static Boolean added1,added2, added3;
 
     public StoryManager() {
+
     }
 
     public static void setApplicationContext(Context context) {
@@ -20,21 +21,21 @@ public class StoryManager {
     }
 
     public static void run(){
-        test = "";
-       added1 = false;
-       added2 = false;
-       added3 = false;
+        storyToUnlock = "";
+        added1 = false;
+        added2 = false;
+        added3 = false;
     }
 
     public static void createStory() {
-        if (test.equals("1") && !added1) {
+        if (storyToUnlock.equals("1") && !added1) {
             story.add(new Story("De Verloren Sleutel", appContext.getString(R.string.verhaal_de_verloren_sleutel), R.drawable.sleutel));
             added1 = true;
         }
-        if (test.equals("2") && !added2) {
+        if (storyToUnlock.equals("2") && !added2) {
             story.add(new Story("De Magische Zandloper", appContext.getString(R.string.verhaal_de_magische_zandloper), R.drawable.zandloper));
             added2 = true;
-        } if (test.equals("3") && !added3) {
+        } if (storyToUnlock.equals("3") && !added3) {
             story.add(new Story("Het Geheim van de Verzonken Stad", appContext.getString(R.string.verhaal_het_geheim_van_de_verzonken_schat), R.drawable.verzonken_schat));
             added3 = true;
         }

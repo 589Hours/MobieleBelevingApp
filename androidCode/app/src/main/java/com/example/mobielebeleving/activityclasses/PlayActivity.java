@@ -2,7 +2,6 @@ package com.example.mobielebeleving.activityclasses;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +9,7 @@ import android.view.MenuItem;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobielebeleving.FlashLightController;
 import com.example.mobielebeleving.R;
+import com.example.mobielebeleving.RecyclerView.Story.StoryManager;
 import com.example.mobielebeleving.Timer;
 
 import java.io.BufferedReader;
@@ -33,6 +34,7 @@ public class PlayActivity extends AppCompatActivity {
     private final static String HOST_IP = "192.168.178.165";
     private FlashLightController flashLightController;
     private ImageButton flashButton;
+    private TextView scoreCounter;
     private static boolean buttonIsReady = true;
 
     @Override
@@ -48,6 +50,7 @@ public class PlayActivity extends AppCompatActivity {
 
         flashLightController = new FlashLightController((CameraManager) getSystemService(CAMERA_SERVICE));
         flashButton = findViewById(R.id.flashButton);
+        scoreCounter = findViewById(R.id.scoreCounter);
 
         //have to give the activity with the countdown thread so we can use runOnUiThread()
         PlayActivity playActivity = PlayActivity.this;
@@ -91,7 +94,19 @@ public class PlayActivity extends AppCompatActivity {
                         //keep checking if app receives something from server
                         while (socket.isConnected()){
                             String line = reader.readLine();
-                            Log.d(TAG, "android received " + line);
+                            Log.d("COUNTER RECEIVE", "android received " + line);
+
+                            if (line.contains("unlock")){
+                                String[] info = line.split(":");
+                                //set story to unlock at story manager
+                                StoryManager.storyToUnlock = info[1];
+                                StoryManager.createStory();
+                            }
+                            //check if line matches decimals
+                            if (line.matches("\\d*")){
+                                playActivity.runOnUiThread(() -> scoreCounter.setText(line));
+                            }
+
                         }
 
                     } catch (IOException e) {

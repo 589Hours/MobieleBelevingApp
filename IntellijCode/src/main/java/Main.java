@@ -79,6 +79,7 @@ public class Main {
             app.unlockStories(code);
             counter = 0;
         }
+        apps.clear();
     }
 
     public static void turnRandomOn() {
