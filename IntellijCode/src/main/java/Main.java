@@ -56,17 +56,4 @@ public class Main {
 
         sensors.get(randomInt).TurnOn();
     }
-    /*
-
-            new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())).write("Type");
-            String response = null;
-
-            while(response == null) {
-                response = new BufferedReader(new InputStreamReader(socket.getInputStream())).readLine();
-            }
-
-            if(response.equals("app")) {
-                sensors.add(new Sensor(socket));
-            }
-     */
 }

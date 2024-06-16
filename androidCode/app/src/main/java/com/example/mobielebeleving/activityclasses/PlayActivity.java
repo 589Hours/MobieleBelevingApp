@@ -33,8 +33,7 @@ public class PlayActivity extends AppCompatActivity {
     private FlashLightController flashLightController;
     private ImageButton flashButton;
     private static boolean buttonIsReady = true;
-    private BufferedReader reader;
-    private BufferedWriter writer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +50,7 @@ public class PlayActivity extends AppCompatActivity {
 
 
         flashButton = findViewById(R.id.flashButton);
+        PlayActivity playActivity = PlayActivity.this;
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +66,7 @@ public class PlayActivity extends AppCompatActivity {
                         preferably above two.
                         */
                         
-                        Thread countThread = new Thread(new Timer(3, v.getContext(), findViewById(R.id.countdownText)));
+                        Thread countThread = new Thread(new Timer(3, v.getContext(), findViewById(R.id.countdownText), playActivity));
                         countThread.start();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -83,8 +83,9 @@ public class PlayActivity extends AppCompatActivity {
                         Socket socket = new Socket("192.168.178.165", 12345);
                         socket.getOutputStream().write('a');
                         socket.getOutputStream().flush();
-                        reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                        writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                         while (socket.isConnected()){
                             String line = reader.readLine();
                             Log.d(TAG, "android received " + line);
