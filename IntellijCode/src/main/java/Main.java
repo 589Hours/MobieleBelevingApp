@@ -56,6 +56,7 @@ public class Main {
             //check if someone leaves mid-game
             if (!app.isConnected()){
                 apps.remove(app);
+                continue;
             }
             app.writeScore(counter);
         }
@@ -74,7 +75,7 @@ public class Main {
                 apps.remove(app);
                 continue;
             }
-            
+
             app.unlockStories(code);
             counter = 0;
         }
